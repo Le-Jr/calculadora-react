@@ -13,83 +13,87 @@
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
 }
+body {
+  background-color: #3a3a3a;
 
-main {
-  @include flexAlign();
-  margin-top: 2em;
-}
-
-.card {
-  width: 450px;
-  height: 220px;
-  background-color: #202020;
-  border-radius: 30px;
-  @include flexAlign();
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 2em;
-
-  h1 {
-    margin-top: 1em;
-  }
-  h3 {
-    color: white;
-    margin-top: 2em;
-    background-color: #3a3a3a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 80px;
-    height: 40px;
-    text-align: center;
-  }
-
-  .inputs {
-    display: flex;
-    gap: 10px;
-    input {
-      margin-top: 2em;
-      border: none;
-      background-color: #3a3a3a;
-      color: white;
-      padding: 5px;
-      border-radius: 5px;
-      font-size: 15px;
-      width: 80px;
-    }
-  }
-
-  /* Para navegadores Chrome, Safari, Edge e Opera */
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  /* Para Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
-
-  .buttons {
+  main {
     @include flexAlign();
-    flex-direction: row;
-    gap: 5px;
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      border-radius: 50%;
+    margin-top: 2em;
+    h1 {
       margin-top: 1em;
-      width: 40px;
-      height: 40px;
-      padding: 10px;
-      background-color: #ff9300;
       color: white;
-      border: none;
+    }
+
+    .card {
+      width: 450px;
+      height: 220px;
+      background-color: #202020;
+      border-radius: 30px;
+      @include flexAlign();
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 2em;
+
+      h3 {
+        color: white;
+        margin-top: 2em;
+        background-color: #3a3a3a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        width: 80px;
+        height: 40px;
+        text-align: center;
+      }
+
+      .inputs {
+        display: flex;
+        gap: 10px;
+        input {
+          margin-top: 2em;
+          border: none;
+          background-color: #3a3a3a;
+          color: white;
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 15px;
+          width: 80px;
+        }
+      }
+
+      /* Para navegadores Chrome, Safari, Edge e Opera */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Para Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .buttons {
+        @include flexAlign();
+        flex-direction: row;
+        gap: 5px;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+          border-radius: 50%;
+          margin-top: 1em;
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          background-color: #ff9300;
+          color: white;
+          border: none;
+        }
+      }
     }
   }
 }
