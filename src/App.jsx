@@ -10,11 +10,12 @@ const App = () => {
 
   const capturandoPrimeiroValor = (e) => {
     setPrimeiroValor(Number(e.target.value));
-    console.log(e.target.value);
+    setInput1(e.target.value); // Atualiza o valor do input1
   };
 
   const capturandoSegundoValor = (e) => {
     setSegundoValor(Number(e.target.value));
+    setInput2(e.target.value); // Atualiza o valor do input2
   };
 
   const soma = () => {
@@ -36,6 +37,9 @@ const App = () => {
   const botaoApagaTudo = () => {
     setInput1("");
     setInput2("");
+    setPrimeiroValor(null); // Limpa o primeiro valor
+    setSegundoValor(null); // Limpa o segundo valor
+    setResultado(null); // Limpa o resultado
   };
 
   return (
@@ -48,17 +52,13 @@ const App = () => {
             type="number"
             placeholder="numero 1"
             value={input1}
-            onChange={
-              (capturandoPrimeiroValor, (e) => setInput1(e.target.value))
-            }
+            onChange={capturandoPrimeiroValor}
           />
           <input
             type="number"
             placeholder="numero 2"
             value={input2}
-            onChange={
-              (capturandoSegundoValor, (e) => setInput2(e.target.value))
-            }
+            onChange={capturandoSegundoValor}
           />
         </div>
 
