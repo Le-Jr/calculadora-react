@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [primeiroValor, setPrimeiroValor] = useState();
+  const [segundoValor, setSegundoValor] = useState();
+  const [resultado, setResultado] = useState();
+
+  const capturandoPrimeiroValor = (e) => {
+    setPrimeiroValor(Number(e.target.value));
+    console.log(e.target.value);
+  };
+
+  const capturandoSegundoValor = (e) => {
+    setSegundoValor(Number(e.target.value));
+  };
+
+  const soma = () => {
+    setResultado(primeiroValor + segundoValor);
+  };
+
+  const subtracao = () => {
+    setResultado(primeiroValor - segundoValor);
+  };
+
+  const multiplicacao = () => {
+    setResultado(primeiroValor * segundoValor);
+  };
+
+  const divisao = () => {
+    setResultado(primeiroValor / segundoValor);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <main>
+      <h1>Calculadora</h1>
+      <input type="number" onChange={capturandoPrimeiroValor} />
+      <input type="number" onChange={capturandoSegundoValor} />
+      <button onClick={soma}>+</button>
+      <button onClick={subtracao}>-</button>
+      <button onClick={multiplicacao}>*</button>
+      <button onClick={divisao}>/</button>
 
-export default App
+      <h3>{resultado}</h3>
+    </main>
+  );
+};
+
+export default App;
